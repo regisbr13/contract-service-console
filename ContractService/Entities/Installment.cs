@@ -1,16 +1,22 @@
 ﻿using System;
+using System.Globalization;
 
 namespace ContractService.Entities
 {
     class Installment
     {
         public DateTime DueDate { get; set; }
-        public double Quantia { get; private set; }
+        public double Amount { get; private set; }
 
-        public Installment(DateTime dueDate, double quantia)
+        public Installment(DateTime dueDate, double amount)
         {
             DueDate = dueDate;
-            Quantia = quantia;
+            Amount = amount;
+        }
+
+        public override string ToString()
+        {
+            return DueDate.ToShortDateString() + " - " + Amount.ToString("F2", CultureInfo.InvariantCulture);
         }
     }
 }
