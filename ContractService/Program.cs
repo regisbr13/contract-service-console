@@ -6,7 +6,7 @@ namespace ContractService
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
